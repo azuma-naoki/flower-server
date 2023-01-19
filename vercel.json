@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "api/flower.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes" : [
+      {
+        "src": "/(.*)",
+        "dest": "api/flower.py"
+      }
+    ]
+  }
