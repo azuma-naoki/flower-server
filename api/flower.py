@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
+import urllib.parse
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -35,7 +36,8 @@ def emorion(emotion_id):
 def flower(flower):
 
     f_name = flower
-    print(f_name)
+    # print(f_name)
+    f_name = urllib.parse.unquote(f_name)
 
     connection = sqlite3.connect('flower.db')
 
